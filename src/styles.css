@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design tokens — single source of truth, exportable as tailwind preset later */
+  --ui-bg: 250 250 252;
+  --ui-surface: 255 255 255;
+  --ui-fg: 17 24 39;
+  --ui-muted: 107 114 128;
+  --ui-border: 229 231 235;
+  --ui-brand: 59 130 246;
+  --ui-brand-fg: 255 255 255;
+  --ui-danger: 239 68 68;
+  --ui-danger-fg: 255 255 255;
+  --ui-radius: 8px;
+  --ui-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Rendered components inside shapes should not capture pointer events at the
+   root level — tldraw handles selection/dragging. Specific interactive
+   sub-elements opt back in via .ui-interactive. */
+.ui-shape-root {
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-shape-root .ui-interactive {
+  pointer-events: auto;
+}
+
+/* When a shape is being edited (double-click), enable all pointer events */
+[data-editing='true'] .ui-shape-root {
+  pointer-events: auto;
+  user-select: text;
+}
+
+/* Editor chrome — fixed colors, NOT the user's theme. Theme tokens are only
+   for the designed content (canvas shapes, exported components). */
+.ui-inspector {
+  background: rgb(255 255 255);
+  color: rgb(24 24 27);
+  border-left: 1px solid rgb(228 228 231);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ui-library {
+  background: rgb(255 255 255);
+  color: rgb(24 24 27);
+  border-right: 1px solid rgb(228 228 231);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}

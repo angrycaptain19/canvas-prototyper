@@ -1,0 +1,1420 @@
+{
+  "version": 1,
+  "exportedAt": "2026-05-29T15:21:08.462Z",
+  "defs": [
+    {
+      "id": "componentDef:button-test",
+      "typeName": "componentDef",
+      "name": "ActionButton",
+      "icon": "MousePointerClick",
+      "category": "form",
+      "template": {
+        "type": "ui-button",
+        "x": 0,
+        "y": 0,
+        "w": 140,
+        "h": 40,
+        "props": {
+          "w": 140,
+          "h": 40,
+          "label": "Cancel",
+          "variant": "outline",
+          "size": "md",
+          "loading": false
+        }
+      },
+      "templateBounds": {
+        "w": 140,
+        "h": 40
+      },
+      "variants": [
+        {
+          "name": "tone",
+          "values": [
+            "neutral",
+            "brand",
+            "danger"
+          ],
+          "default": "neutral"
+        },
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "default": "md"
+        }
+      ],
+      "variantSnapshots": {
+        "tone=brand": {
+          "type": "ui-button",
+          "x": 0,
+          "y": 0,
+          "w": 140,
+          "h": 40,
+          "props": {
+            "w": 140,
+            "h": 40,
+            "label": "Save",
+            "variant": "primary",
+            "size": "md",
+            "loading": false
+          }
+        },
+        "tone=danger": {
+          "type": "ui-button",
+          "x": 0,
+          "y": 0,
+          "w": 140,
+          "h": 40,
+          "props": {
+            "w": 140,
+            "h": 40,
+            "label": "Delete",
+            "variant": "destructive",
+            "size": "md",
+            "loading": false
+          }
+        },
+        "size=sm": {
+          "type": "ui-button",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 32,
+          "props": {
+            "w": 100,
+            "h": 32,
+            "label": "Cancel",
+            "variant": "outline",
+            "size": "sm",
+            "loading": false
+          }
+        },
+        "size=lg": {
+          "type": "ui-button",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 48,
+          "props": {
+            "w": 180,
+            "h": 48,
+            "label": "Cancel",
+            "variant": "outline",
+            "size": "lg",
+            "loading": false
+          }
+        },
+        "size=sm|tone=brand": {
+          "type": "ui-button",
+          "x": 0,
+          "y": 0,
+          "w": 100,
+          "h": 32,
+          "props": {
+            "w": 100,
+            "h": 32,
+            "label": "Save",
+            "variant": "primary",
+            "size": "sm",
+            "loading": false
+          }
+        },
+        "size=lg|tone=danger": {
+          "type": "ui-button",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 48,
+          "props": {
+            "w": 180,
+            "h": 48,
+            "label": "Delete",
+            "variant": "destructive",
+            "size": "lg",
+            "loading": false
+          }
+        }
+      },
+      "createdAt": 0
+    }
+  ],
+  "pages": [
+    {
+      "name": "Sign Up",
+      "bounds": {
+        "w": 480,
+        "h": 640
+      },
+      "template": {
+        "type": "ui-page",
+        "x": 0,
+        "y": 0,
+        "w": 480,
+        "h": 640,
+        "props": {
+          "w": 480,
+          "h": 640,
+          "name": "Sign Up",
+          "breakpoint": "desktop",
+          "background": "surface"
+        },
+        "children": [
+          {
+            "type": "ui-stack",
+            "x": 0,
+            "y": 0,
+            "w": 440,
+            "h": 600,
+            "props": {
+              "w": 440,
+              "h": 600,
+              "direction": "vertical",
+              "gap": 16,
+              "padding": 32,
+              "alignItems": "stretch",
+              "justifyContent": "start",
+              "background": "surface",
+              "borderRadius": 8,
+              "border": false
+            },
+            "children": [
+              {
+                "type": "ui-text",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 36,
+                "props": {
+                  "w": 320,
+                  "h": 36,
+                  "content": "Create your account",
+                  "role": "heading",
+                  "weight": "normal",
+                  "tone": "default",
+                  "align": "left"
+                }
+              },
+              {
+                "type": "ui-text",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 20,
+                "props": {
+                  "w": 320,
+                  "h": 20,
+                  "content": "Already a customer? Sign in.",
+                  "role": "caption",
+                  "weight": "normal",
+                  "tone": "muted",
+                  "align": "left"
+                }
+              },
+              {
+                "type": "ui-form",
+                "x": 0,
+                "y": 0,
+                "w": 440,
+                "h": 400,
+                "props": {
+                  "w": 440,
+                  "h": 400,
+                  "direction": "vertical",
+                  "gap": 12,
+                  "padding": 0,
+                  "alignItems": "stretch",
+                  "justifyContent": "start",
+                  "background": "none",
+                  "borderRadius": 0,
+                  "border": false,
+                  "action": "/api/signup",
+                  "method": "POST"
+                },
+                "children": [
+                  {
+                    "type": "ui-input",
+                    "x": 0,
+                    "y": 0,
+                    "w": 320,
+                    "h": 68,
+                    "props": {
+                      "w": 320,
+                      "h": 68,
+                      "label": "Full name",
+                      "placeholder": "Ada Lovelace",
+                      "value": "",
+                      "type": "text",
+                      "helperText": "",
+                      "error": false
+                    }
+                  },
+                  {
+                    "type": "ui-input",
+                    "x": 0,
+                    "y": 0,
+                    "w": 320,
+                    "h": 68,
+                    "props": {
+                      "w": 320,
+                      "h": 68,
+                      "label": "Email",
+                      "placeholder": "ada@example.com",
+                      "value": "",
+                      "type": "email",
+                      "helperText": "",
+                      "error": false
+                    }
+                  },
+                  {
+                    "type": "ui-input",
+                    "x": 0,
+                    "y": 0,
+                    "w": 320,
+                    "h": 68,
+                    "props": {
+                      "w": 320,
+                      "h": 68,
+                      "label": "Password",
+                      "placeholder": "••••••••",
+                      "value": "",
+                      "type": "password",
+                      "helperText": "",
+                      "error": false
+                    }
+                  },
+                  {
+                    "type": "ui-input",
+                    "x": 0,
+                    "y": 0,
+                    "w": 320,
+                    "h": 68,
+                    "props": {
+                      "w": 320,
+                      "h": 68,
+                      "label": "Confirm password",
+                      "placeholder": "••••••••",
+                      "value": "",
+                      "type": "password",
+                      "helperText": "",
+                      "error": false
+                    }
+                  },
+                  {
+                    "type": "ui-checkbox",
+                    "x": 0,
+                    "y": 0,
+                    "w": 440,
+                    "h": 24,
+                    "props": {
+                      "w": 440,
+                      "h": 24,
+                      "label": "I agree to the terms",
+                      "checked": false,
+                      "disabled": false
+                    }
+                  },
+                  {
+                    "type": "ui-button",
+                    "x": 0,
+                    "y": 0,
+                    "w": 160,
+                    "h": 40,
+                    "props": {
+                      "w": 440,
+                      "h": 40,
+                      "label": "Create account",
+                      "variant": "primary",
+                      "size": "md",
+                      "loading": false
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pricing",
+      "bounds": {
+        "w": 960,
+        "h": 600
+      },
+      "template": {
+        "type": "ui-page",
+        "x": 0,
+        "y": 0,
+        "w": 960,
+        "h": 600,
+        "props": {
+          "w": 960,
+          "h": 600,
+          "name": "Pricing",
+          "breakpoint": "desktop",
+          "background": "bg"
+        },
+        "children": [
+          {
+            "type": "ui-stack",
+            "x": 0,
+            "y": 0,
+            "w": 920,
+            "h": 560,
+            "props": {
+              "w": 920,
+              "h": 560,
+              "direction": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "alignItems": "stretch",
+              "justifyContent": "start",
+              "background": "none",
+              "borderRadius": 8,
+              "border": false
+            },
+            "children": [
+              {
+                "type": "ui-text",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 36,
+                "props": {
+                  "w": 320,
+                  "h": 36,
+                  "content": "Plans",
+                  "role": "heading",
+                  "weight": "normal",
+                  "tone": "default",
+                  "align": "left"
+                }
+              },
+              {
+                "type": "ui-stack",
+                "x": 0,
+                "y": 0,
+                "w": 880,
+                "h": 400,
+                "props": {
+                  "w": 880,
+                  "h": 400,
+                  "direction": "horizontal",
+                  "gap": 24,
+                  "padding": 0,
+                  "alignItems": "start",
+                  "justifyContent": "start",
+                  "background": "none",
+                  "borderRadius": 8,
+                  "border": false
+                },
+                "children": [
+                  {
+                    "type": "ui-card",
+                    "x": 0,
+                    "y": 0,
+                    "w": 280,
+                    "h": 380,
+                    "props": {
+                      "w": 280,
+                      "h": 380,
+                      "shadow": "md",
+                      "borderRadius": 12,
+                      "border": true,
+                      "padding": 24
+                    },
+                    "children": [
+                      {
+                        "type": "ui-stack",
+                        "x": 0,
+                        "y": 0,
+                        "w": 232,
+                        "h": 332,
+                        "props": {
+                          "w": 232,
+                          "h": 332,
+                          "direction": "vertical",
+                          "gap": 12,
+                          "padding": 0,
+                          "alignItems": "stretch",
+                          "justifyContent": "start",
+                          "background": "none",
+                          "borderRadius": 8,
+                          "border": false
+                        },
+                        "children": [
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 36,
+                            "props": {
+                              "w": 320,
+                              "h": 36,
+                              "content": "Free",
+                              "role": "heading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 28,
+                            "props": {
+                              "w": 320,
+                              "h": 28,
+                              "content": "$0/mo",
+                              "role": "subheading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 20,
+                            "props": {
+                              "w": 320,
+                              "h": 20,
+                              "content": "For individuals",
+                              "role": "caption",
+                              "weight": "normal",
+                              "tone": "muted",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-component-instance",
+                            "x": 0,
+                            "y": 0,
+                            "w": 140,
+                            "h": 40,
+                            "props": {
+                              "w": 140,
+                              "h": 40,
+                              "defId": "componentDef:button-test",
+                              "variantChoices": {
+                                "tone": "brand",
+                                "size": "md"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ui-card",
+                    "x": 0,
+                    "y": 0,
+                    "w": 280,
+                    "h": 380,
+                    "props": {
+                      "w": 280,
+                      "h": 380,
+                      "shadow": "lg",
+                      "borderRadius": 12,
+                      "border": true,
+                      "padding": 24
+                    },
+                    "children": [
+                      {
+                        "type": "ui-stack",
+                        "x": 0,
+                        "y": 0,
+                        "w": 232,
+                        "h": 332,
+                        "props": {
+                          "w": 232,
+                          "h": 332,
+                          "direction": "vertical",
+                          "gap": 12,
+                          "padding": 0,
+                          "alignItems": "stretch",
+                          "justifyContent": "start",
+                          "background": "none",
+                          "borderRadius": 8,
+                          "border": false
+                        },
+                        "children": [
+                          {
+                            "type": "ui-badge",
+                            "x": 0,
+                            "y": 0,
+                            "w": 80,
+                            "h": 22,
+                            "props": {
+                              "w": 80,
+                              "h": 22,
+                              "label": "Most popular",
+                              "tone": "brand",
+                              "variant": "solid"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 36,
+                            "props": {
+                              "w": 320,
+                              "h": 36,
+                              "content": "Pro",
+                              "role": "heading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 28,
+                            "props": {
+                              "w": 320,
+                              "h": 28,
+                              "content": "$29/mo",
+                              "role": "subheading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-component-instance",
+                            "x": 0,
+                            "y": 0,
+                            "w": 180,
+                            "h": 48,
+                            "props": {
+                              "w": 180,
+                              "h": 48,
+                              "defId": "componentDef:button-test",
+                              "variantChoices": {
+                                "tone": "brand",
+                                "size": "lg"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ui-card",
+                    "x": 0,
+                    "y": 0,
+                    "w": 280,
+                    "h": 380,
+                    "props": {
+                      "w": 280,
+                      "h": 380,
+                      "shadow": "sm",
+                      "borderRadius": 12,
+                      "border": true,
+                      "padding": 24
+                    },
+                    "children": [
+                      {
+                        "type": "ui-stack",
+                        "x": 0,
+                        "y": 0,
+                        "w": 232,
+                        "h": 332,
+                        "props": {
+                          "w": 232,
+                          "h": 332,
+                          "direction": "vertical",
+                          "gap": 12,
+                          "padding": 0,
+                          "alignItems": "stretch",
+                          "justifyContent": "start",
+                          "background": "none",
+                          "borderRadius": 8,
+                          "border": false
+                        },
+                        "children": [
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 36,
+                            "props": {
+                              "w": 320,
+                              "h": 36,
+                              "content": "Enterprise",
+                              "role": "heading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 28,
+                            "props": {
+                              "w": 320,
+                              "h": 28,
+                              "content": "Contact us",
+                              "role": "subheading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-component-instance",
+                            "x": 0,
+                            "y": 0,
+                            "w": 140,
+                            "h": 40,
+                            "props": {
+                              "w": 140,
+                              "h": 40,
+                              "defId": "componentDef:button-test",
+                              "variantChoices": {
+                                "tone": "neutral",
+                                "size": "md"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kitchen Sink",
+      "bounds": {
+        "w": 600,
+        "h": 1200
+      },
+      "template": {
+        "type": "ui-page",
+        "x": 0,
+        "y": 0,
+        "w": 600,
+        "h": 1200,
+        "props": {
+          "w": 600,
+          "h": 1200,
+          "name": "Kitchen Sink",
+          "breakpoint": "desktop",
+          "background": "surface"
+        },
+        "children": [
+          {
+            "type": "ui-stack",
+            "x": 0,
+            "y": 0,
+            "w": 560,
+            "h": 1160,
+            "props": {
+              "w": 560,
+              "h": 1160,
+              "direction": "vertical",
+              "gap": 16,
+              "padding": 32,
+              "alignItems": "stretch",
+              "justifyContent": "start",
+              "background": "surface",
+              "borderRadius": 8,
+              "border": false
+            },
+            "children": [
+              {
+                "type": "ui-text",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 36,
+                "props": {
+                  "w": 320,
+                  "h": 36,
+                  "content": "Everything",
+                  "role": "heading",
+                  "weight": "normal",
+                  "tone": "default",
+                  "align": "left"
+                }
+              },
+              {
+                "type": "ui-text",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 24,
+                "props": {
+                  "w": 320,
+                  "h": 24,
+                  "content": "All registered shape types.",
+                  "role": "body",
+                  "weight": "normal",
+                  "tone": "muted",
+                  "align": "left"
+                }
+              },
+              {
+                "type": "ui-alert",
+                "x": 0,
+                "y": 0,
+                "w": 480,
+                "h": 72,
+                "props": {
+                  "w": 480,
+                  "h": 72,
+                  "title": "Heads up",
+                  "description": "You have 3 unread notifications.",
+                  "tone": "info",
+                  "variant": "subtle"
+                }
+              },
+              {
+                "type": "ui-alert",
+                "x": 0,
+                "y": 0,
+                "w": 480,
+                "h": 72,
+                "props": {
+                  "w": 480,
+                  "h": 72,
+                  "title": "Action required",
+                  "description": "Please verify your email.",
+                  "tone": "warning",
+                  "variant": "solid"
+                }
+              },
+              {
+                "type": "ui-progress",
+                "x": 0,
+                "y": 0,
+                "w": 480,
+                "h": 8,
+                "props": {
+                  "w": 480,
+                  "h": 8,
+                  "value": 60,
+                  "max": 100,
+                  "tone": "brand",
+                  "showLabel": true
+                }
+              },
+              {
+                "type": "ui-divider",
+                "x": 0,
+                "y": 0,
+                "w": 480,
+                "h": 1,
+                "props": {
+                  "w": 480,
+                  "h": 1,
+                  "orientation": "horizontal",
+                  "tone": "border",
+                  "thickness": 1
+                }
+              },
+              {
+                "type": "ui-switch",
+                "x": 0,
+                "y": 0,
+                "w": 220,
+                "h": 24,
+                "props": {
+                  "w": 220,
+                  "h": 24,
+                  "label": "Email notifications",
+                  "checked": true,
+                  "disabled": false
+                }
+              },
+              {
+                "type": "ui-radio",
+                "x": 0,
+                "y": 0,
+                "w": 220,
+                "h": 24,
+                "props": {
+                  "w": 220,
+                  "h": 24,
+                  "label": "Plan A",
+                  "checked": true,
+                  "disabled": false,
+                  "name": "plan"
+                }
+              },
+              {
+                "type": "ui-radio",
+                "x": 0,
+                "y": 0,
+                "w": 220,
+                "h": 24,
+                "props": {
+                  "w": 220,
+                  "h": 24,
+                  "label": "Plan B",
+                  "checked": false,
+                  "disabled": false,
+                  "name": "plan"
+                }
+              },
+              {
+                "type": "ui-checkbox",
+                "x": 0,
+                "y": 0,
+                "w": 220,
+                "h": 24,
+                "props": {
+                  "w": 220,
+                  "h": 24,
+                  "label": "Remember me",
+                  "checked": false,
+                  "disabled": false
+                }
+              },
+              {
+                "type": "ui-input",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 68,
+                "props": {
+                  "w": 320,
+                  "h": 68,
+                  "label": "Project name",
+                  "placeholder": "My SaaS app",
+                  "value": "",
+                  "type": "text",
+                  "helperText": "",
+                  "error": false
+                }
+              },
+              {
+                "type": "ui-select",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 68,
+                "props": {
+                  "w": 320,
+                  "h": 68,
+                  "label": "Country",
+                  "placeholder": "Choose…",
+                  "value": "us",
+                  "options": "us|United States, ca|Canada, gb|United Kingdom, de|Germany"
+                }
+              },
+              {
+                "type": "ui-button",
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 40,
+                "props": {
+                  "w": 160,
+                  "h": 40,
+                  "label": "Test bad variant",
+                  "variant": "BOGUS",
+                  "size": "md",
+                  "loading": false
+                }
+              },
+              {
+                "type": "ui-tag",
+                "x": 0,
+                "y": 0,
+                "w": 80,
+                "h": 28,
+                "props": {
+                  "w": 80,
+                  "h": 28,
+                  "label": "design",
+                  "tone": "brand",
+                  "removable": true
+                }
+              },
+              {
+                "type": "ui-tag",
+                "x": 0,
+                "y": 0,
+                "w": 80,
+                "h": 28,
+                "props": {
+                  "w": 80,
+                  "h": 28,
+                  "label": "engineering",
+                  "tone": "neutral",
+                  "removable": false
+                }
+              },
+              {
+                "type": "ui-badge",
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 22,
+                "props": {
+                  "w": 64,
+                  "h": 22,
+                  "label": "NEW",
+                  "tone": "success",
+                  "variant": "subtle"
+                }
+              },
+              {
+                "type": "ui-avatar",
+                "x": 0,
+                "y": 0,
+                "w": 40,
+                "h": 40,
+                "props": {
+                  "w": 40,
+                  "h": 40,
+                  "initials": "AB",
+                  "shape": "circle",
+                  "src": ""
+                }
+              },
+              {
+                "type": "ui-tabs",
+                "x": 0,
+                "y": 0,
+                "w": 480,
+                "h": 40,
+                "props": {
+                  "w": 480,
+                  "h": 40,
+                  "tabs": "Overview,Settings,Billing",
+                  "activeIndex": 0
+                }
+              },
+              {
+                "type": "ui-button",
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 40,
+                "props": {
+                  "w": 160,
+                  "h": 40,
+                  "label": "Submit",
+                  "variant": "primary",
+                  "size": "md",
+                  "loading": false
+                }
+              },
+              {
+                "type": "ui-button",
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 40,
+                "props": {
+                  "w": 160,
+                  "h": 40,
+                  "label": "Cancel",
+                  "variant": "ghost",
+                  "size": "md",
+                  "loading": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "pricing",
+      "bounds": {
+        "w": 960,
+        "h": 600
+      },
+      "template": {
+        "type": "ui-page",
+        "x": 0,
+        "y": 0,
+        "w": 960,
+        "h": 600,
+        "props": {
+          "w": 960,
+          "h": 600,
+          "name": "Pricing",
+          "breakpoint": "desktop",
+          "background": "bg"
+        },
+        "children": [
+          {
+            "type": "ui-stack",
+            "x": 0,
+            "y": 0,
+            "w": 920,
+            "h": 560,
+            "props": {
+              "w": 920,
+              "h": 560,
+              "direction": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "alignItems": "stretch",
+              "justifyContent": "start",
+              "background": "none",
+              "borderRadius": 8,
+              "border": false
+            },
+            "children": [
+              {
+                "type": "ui-text",
+                "x": 0,
+                "y": 0,
+                "w": 320,
+                "h": 36,
+                "props": {
+                  "w": 320,
+                  "h": 36,
+                  "content": "Plans",
+                  "role": "heading",
+                  "weight": "normal",
+                  "tone": "default",
+                  "align": "left"
+                }
+              },
+              {
+                "type": "ui-stack",
+                "x": 0,
+                "y": 0,
+                "w": 880,
+                "h": 400,
+                "props": {
+                  "w": 880,
+                  "h": 400,
+                  "direction": "horizontal",
+                  "gap": 24,
+                  "padding": 0,
+                  "alignItems": "start",
+                  "justifyContent": "start",
+                  "background": "none",
+                  "borderRadius": 8,
+                  "border": false
+                },
+                "children": [
+                  {
+                    "type": "ui-card",
+                    "x": 0,
+                    "y": 0,
+                    "w": 280,
+                    "h": 380,
+                    "props": {
+                      "w": 280,
+                      "h": 380,
+                      "shadow": "md",
+                      "borderRadius": 12,
+                      "border": true,
+                      "padding": 24
+                    },
+                    "children": [
+                      {
+                        "type": "ui-stack",
+                        "x": 0,
+                        "y": 0,
+                        "w": 232,
+                        "h": 332,
+                        "props": {
+                          "w": 232,
+                          "h": 332,
+                          "direction": "vertical",
+                          "gap": 12,
+                          "padding": 0,
+                          "alignItems": "stretch",
+                          "justifyContent": "start",
+                          "background": "none",
+                          "borderRadius": 8,
+                          "border": false
+                        },
+                        "children": [
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 36,
+                            "props": {
+                              "w": 320,
+                              "h": 36,
+                              "content": "Free",
+                              "role": "heading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 28,
+                            "props": {
+                              "w": 320,
+                              "h": 28,
+                              "content": "$0/mo",
+                              "role": "subheading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 20,
+                            "props": {
+                              "w": 320,
+                              "h": 20,
+                              "content": "For individuals",
+                              "role": "caption",
+                              "weight": "normal",
+                              "tone": "muted",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-component-instance",
+                            "x": 0,
+                            "y": 0,
+                            "w": 140,
+                            "h": 40,
+                            "props": {
+                              "w": 140,
+                              "h": 40,
+                              "defId": "componentDef:button-test",
+                              "variantChoices": {
+                                "tone": "brand",
+                                "size": "md"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ui-card",
+                    "x": 0,
+                    "y": 0,
+                    "w": 280,
+                    "h": 380,
+                    "props": {
+                      "w": 280,
+                      "h": 380,
+                      "shadow": "lg",
+                      "borderRadius": 12,
+                      "border": true,
+                      "padding": 24
+                    },
+                    "children": [
+                      {
+                        "type": "ui-stack",
+                        "x": 0,
+                        "y": 0,
+                        "w": 232,
+                        "h": 332,
+                        "props": {
+                          "w": 232,
+                          "h": 332,
+                          "direction": "vertical",
+                          "gap": 12,
+                          "padding": 0,
+                          "alignItems": "stretch",
+                          "justifyContent": "start",
+                          "background": "none",
+                          "borderRadius": 8,
+                          "border": false
+                        },
+                        "children": [
+                          {
+                            "type": "ui-badge",
+                            "x": 0,
+                            "y": 0,
+                            "w": 80,
+                            "h": 22,
+                            "props": {
+                              "w": 80,
+                              "h": 22,
+                              "label": "Most popular",
+                              "tone": "brand",
+                              "variant": "solid"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 36,
+                            "props": {
+                              "w": 320,
+                              "h": 36,
+                              "content": "Pro",
+                              "role": "heading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 28,
+                            "props": {
+                              "w": 320,
+                              "h": 28,
+                              "content": "$29/mo",
+                              "role": "subheading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-component-instance",
+                            "x": 0,
+                            "y": 0,
+                            "w": 180,
+                            "h": 48,
+                            "props": {
+                              "w": 180,
+                              "h": 48,
+                              "defId": "componentDef:button-test",
+                              "variantChoices": {
+                                "tone": "brand",
+                                "size": "lg"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ui-card",
+                    "x": 0,
+                    "y": 0,
+                    "w": 280,
+                    "h": 380,
+                    "props": {
+                      "w": 280,
+                      "h": 380,
+                      "shadow": "sm",
+                      "borderRadius": 12,
+                      "border": true,
+                      "padding": 24
+                    },
+                    "children": [
+                      {
+                        "type": "ui-stack",
+                        "x": 0,
+                        "y": 0,
+                        "w": 232,
+                        "h": 332,
+                        "props": {
+                          "w": 232,
+                          "h": 332,
+                          "direction": "vertical",
+                          "gap": 12,
+                          "padding": 0,
+                          "alignItems": "stretch",
+                          "justifyContent": "start",
+                          "background": "none",
+                          "borderRadius": 8,
+                          "border": false
+                        },
+                        "children": [
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 36,
+                            "props": {
+                              "w": 320,
+                              "h": 36,
+                              "content": "Enterprise",
+                              "role": "heading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-text",
+                            "x": 0,
+                            "y": 0,
+                            "w": 320,
+                            "h": 28,
+                            "props": {
+                              "w": 320,
+                              "h": 28,
+                              "content": "Contact us",
+                              "role": "subheading",
+                              "weight": "normal",
+                              "tone": "default",
+                              "align": "left"
+                            }
+                          },
+                          {
+                            "type": "ui-component-instance",
+                            "x": 0,
+                            "y": 0,
+                            "w": 140,
+                            "h": 40,
+                            "props": {
+                              "w": 140,
+                              "h": 40,
+                              "defId": "componentDef:button-test",
+                              "variantChoices": {
+                                "tone": "neutral",
+                                "size": "md"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.vite/
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Dev artifacts
+agent.log
+*.log
+ui/
+
+# Downloaded project snapshots — keep test-fixture.json as a checked-in
+# fixture, but treat ad-hoc project.json exports as transient.
+project*.json
+!test-fixture.json
