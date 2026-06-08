@@ -2,6 +2,7 @@ node_modules/
 dist/
 .vite/
 .DS_Store
+*.tsbuildinfo
 
 # IDE
 .vscode/
@@ -10,7 +11,9 @@ dist/
 # Dev artifacts
 agent.log
 *.log
-ui/
+# Root-only: the `npm run sync --out ./ui` codegen output. Anchored with a
+# leading slash so it does NOT match the app's own src/ui/ source directory.
+/ui/
 
 # Downloaded project snapshots — keep test-fixture.json as a checked-in
 # fixture, but treat ad-hoc project.json exports as transient.

@@ -14,7 +14,7 @@ import { EditorRefProvider } from '@/lib/editorContext'
 import { getRegistration } from '@/lib/registry'
 import { makeStore } from '@/lib/store'
 import { CmdKPalette } from '@/ui/CmdKPalette'
-import { PreviewToggle } from '@/ui/PreviewToggle'
+import { AppHeader } from '@/ui/AppHeader'
 import { CodePreview, type CodePreviewTarget } from '@/ui/CodePreview'
 import { CodePreviewContext } from '@/ui/codePreviewContext'
 import { Inspector } from '@/ui/Inspector'
@@ -37,6 +37,22 @@ const components: TLComponents = {
   // Our app is single-page in concept (each PageFrame shape is a "page"); the
   // native multi-page menu just leaks the temporary "Editing: ..." pages.
   PageMenu: null,
+  // De-tldraw the frame: this is a UI-component builder driven by the Library,
+  // Cmd+K, and drag/drop — the whiteboard drawing tools, menus, and help/share
+  // affordances are noise that make it read as "the tldraw examples app".
+  // Selection (the only canvas interaction we need) and pan/zoom shortcuts
+  // still work without them; the zoom control stays for orientation.
+  Toolbar: null,
+  MainMenu: null,
+  QuickActions: null,
+  ActionsMenu: null,
+  HelpMenu: null,
+  HelperButtons: null,
+  DebugMenu: null,
+  DebugPanel: null,
+  SharePanel: null,
+  MenuPanel: null,
+  KeyboardShortcutsDialog: null,
 }
 
 function seedStarter(editor: Editor) {
@@ -269,20 +285,22 @@ export default function App() {
   return (
     <EditorRefProvider editor={editor}>
       <CodePreviewContext.Provider value={{ open: setCodePreviewTarget }}>
-        <div className="fixed inset-0 flex bg-zinc-100">
-          <LibraryPanel />
-          <div className="flex-1 relative">
-            <Tldraw
-              store={store}
-              shapeUtils={customShapeUtils}
-              components={components}
-              options={tldrawOptions}
-              onMount={handleMount}
-            />
-            <EditBanner />
-            <PreviewToggle />
+        <div className="chrome-root fixed inset-0 flex flex-col bg-[#fafafa] text-[#0a0a0a]">
+          <AppHeader />
+          <div className="flex flex-1 min-h-0">
+            <LibraryPanel />
+            <div className="flex-1 relative min-w-0">
+              <Tldraw
+                store={store}
+                shapeUtils={customShapeUtils}
+                components={components}
+                options={tldrawOptions}
+                onMount={handleMount}
+              />
+              <EditBanner />
+            </div>
+            <Inspector />
           </div>
-          <Inspector />
         </div>
         {editor && (
           <CodePreview

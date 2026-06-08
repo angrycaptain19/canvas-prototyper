@@ -325,17 +325,20 @@ export async function runAgent(
   runRecord.totalToolCalls = totalToolCalls
   runRecord.runEndedAt = new Date().toISOString()
 
-  // Fire-and-forget POST to the Vite middleware. Failure shouldn't block
-  // the run — we still return results to the caller. The middleware
-  // appends one JSON line per call to ./agent.log in the project root.
-  try {
-    await fetch('/__agent_log', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(runRecord),
-    })
-  } catch (err) {
-    console.warn('[agent log] failed to POST to /__agent_log:', err)
+  // Fire-and-forget POST to the Vite dev middleware, which appends one JSON
+  // line per run to ./agent.log. The middleware only exists in `vite dev`
+  // (apply: 'serve'), so skip it in production builds to avoid a guaranteed
+  // 404 + console warning on every run.
+  if (import.meta.env.DEV) {
+    try {
+      await fetch('/__agent_log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(runRecord),
+      })
+    } catch (err) {
+      console.warn('[agent log] failed to POST to /__agent_log:', err)
+    }
   }
 
   if (mode === 'create' && ctx.createdRootIds.length === 0) {
