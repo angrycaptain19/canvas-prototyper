@@ -55,6 +55,13 @@ const components: TLComponents = {
   KeyboardShortcutsDialog: null,
 }
 
+// tldraw business license. Supplied at build time via a Vite env var
+// (VITE_TLDRAW_LICENSE_KEY), which is set per-environment in Vercel's project
+// settings. When absent (e.g. local dev without the var) tldraw runs in its
+// default watermarked mode. The key is domain-locked and intended to ship in
+// the client bundle, so exposing it via a VITE_ var is expected.
+const TLDRAW_LICENSE_KEY = import.meta.env.VITE_TLDRAW_LICENSE_KEY as string | undefined
+
 function seedStarter(editor: Editor) {
   const pageId = createShapeId()
   const stackId = createShapeId()
@@ -295,6 +302,7 @@ export default function App() {
                 shapeUtils={customShapeUtils}
                 components={components}
                 options={tldrawOptions}
+                licenseKey={TLDRAW_LICENSE_KEY}
                 onMount={handleMount}
               />
               <EditBanner />

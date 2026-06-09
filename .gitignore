@@ -8,6 +8,11 @@ dist/
 .vscode/
 .idea/
 
+# Local env files (real keys live here / in Vercel) — keep .env.example tracked
+.env
+.env.*
+!.env.example
+
 # Dev artifacts
 agent.log
 *.log

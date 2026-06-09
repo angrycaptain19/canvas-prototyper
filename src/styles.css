@@ -113,8 +113,10 @@ html, body, #root {
 
 /* ─── De-tldraw the canvas ───────────────────────────────────────────────────
    Strip the whiteboard tells: recolor selection/focus to the monochrome
-   accent, give the surface a faint Geist-style dot grid, hide the watermark,
-   and quiet the remaining native UI (zoom control) into a hairline chip. */
+   accent, give the surface a faint Geist-style dot grid, and quiet the
+   remaining native UI (zoom control) into a hairline chip. The watermark is
+   removed legitimately by the tldraw license key (VITE_TLDRAW_LICENSE_KEY) —
+   not by CSS — so it correctly stays visible on unlicensed local builds. */
 .tl-container {
   --color-selected: #0a0a0a;
   --color-selected-contrast: #ffffff;
@@ -129,8 +131,7 @@ html, body, #root {
   background-size: 22px 22px !important;
 }
 
-/* Founder build (tldraw.com) — drop the watermark for a clean product frame. */
-.tl-watermark_SEE-LICENSE,
+/* The debug panel isn't license-gated — hide it for a clean product frame. */
 .tlui-debug-panel {
   display: none !important;
 }
